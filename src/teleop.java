@@ -13,6 +13,8 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 @TeleOp(name = "teleop")
 public class GamepadOpMode extends LinearOpMode {
+  private DcMotor backleft, backright, frontleft, frontright;
+
   @Override
   public void runOpMode() {
     backleft = hardwareMap.get(DcMotor.class, "back left");
@@ -25,18 +27,19 @@ public class GamepadOpMode extends LinearOpMode {
     frontleft.setDirection(DcMotor.Direction.REVERSE);
     frontright.setDirection(DcMotor.Direction.REVERSE);
 
-    double speed, rotation = 0.0, 0.0;
+    double speedx, speedy, rotation;
 
     waitForStart();
     if(opModeIsActive()) {
       while(opModeIsActive()) {
-        speed = -gamepad1.left_stick_y;
+        speedx = gamepad1.left_stick_x;
+        speedy = -gamepad1.left_stick_y;
         rotation = gamepad1.right_stick_x;
 
-        backleft.setPower(speed - rotation/2.0);
-        backright.setPower(speed + rotation/2.0);
-        frontleft.setPower(speed - rotation/2.0);
-        frontright.setPower(speed + rotation/2.0);
+        backleft.setPower(speedy + speedx - rotation);
+        backright.setPower(speedy - speedx + rotation);
+        frontleft.setPower(speedy - speedx - rotation);
+        frontright.setPower(speedy + speedx + rotation);
 
         telemetry.update();
       }

@@ -33,6 +33,11 @@ public class GamepadOpMode extends LinearOpMode {
         speed = -gamepad1.left_stick_y;
         rotation = gamepad1.right_stick_x;
 
+        backleft.setPower(speed - rotation/2.0);
+        backright.setPower(speed + rotation/2.0);
+        frontleft.setPower(speed - rotation/2.0);
+        frontright.setPower(speed + rotation/2.0);
+
         telemetry.update();
       }
     }

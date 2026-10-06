@@ -8,11 +8,11 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
-@TeleOp(name = "Robotics2027 (Blocks to Java)")
-public class Robotics2027 extends LinearOpMode {
+@Autonomous(name = "autonomous")
+public class autonomous extends LinearOpMode {
 
   /**
    * This sample contains the bare minimum Blocks for any regular OpMode. The 3 blue

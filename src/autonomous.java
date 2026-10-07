@@ -10,6 +10,9 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.pedropathing.follower.Follower;
+import com.pedropathing.localization.Pose;
+import org.firstinspires.ftc.teamcode.pedroPathing.constants.Constants;
 
 @Autonomous(name = "autonomous")
 public class autonomous extends LinearOpMode {
@@ -23,7 +26,8 @@ public class autonomous extends LinearOpMode {
    */
    
   private DcMotor backleft, backright, frontleft, frontright; // wheel motors
-   
+  private Follower follower;
+  
   @Override
   public void runOpMode() {
     // Put initialization blocks here.

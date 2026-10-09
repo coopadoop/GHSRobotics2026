@@ -18,7 +18,7 @@ public class GamepadOpMode extends LinearOpMode {
   @Override
   public void runOpMode() {
     backleft = hardwareMap.get(DcMotor.class, "back left");
-    backright = harwareMap.get(DcMotor.class, "back right");
+    backright = hardwareMap.get(DcMotor.class, "back right");
     frontleft = hardwareMap.get(DcMotor.class, "front left");
     frontright = hardwareMap.get(DcMotor.class, "front right");
     

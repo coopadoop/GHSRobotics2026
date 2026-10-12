@@ -6,16 +6,14 @@
 ### GHS RoBOTS
 ## Prerequisites
 - FTC compatible control hub and drive hub
-- Mapped controller and motors
+- Mapped controller, motors, and servos
 ## Dependencies
-- Pedro Pathing library
+- OnBotJava
 ## Examples used
 - https://www.gobilda.com/content/downloads/3200-2627-0004_example-code.zip
 - https://www.ctrlaltftc.com/
 - https://docs.revrobotics.com/duo-control/hello-robot-blocks/welcome
-- https://pedropathing.com/docs/pathing/installation
 
 ## TO DO LIST
-- Test code on Thursday if finished
-- Make adjustments as needed
-- I need to learn Java
+- Check servo and motor directions
+- Add control of other motors and servos to teleop

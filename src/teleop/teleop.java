@@ -20,30 +20,7 @@ public class Teleop extends LinearOpMode {
 
   @Override
   public void runOpMode() {
-    // set motors and servos to match the names in the config
-    backleft = hardwareMap.get(DcMotor.class, "back left");
-    backright = hardwareMap.get(DcMotor.class, "back right");
-    frontleft = hardwareMap.get(DcMotor.class, "front left");
-    frontright = hardwareMap.get(DcMotor.class, "front right");
-    intakeMotor = hardwareMap.get(DcMotor.class, "intake motor");
-    launch = hardwareMap.get(DcMotor.class, "launch");
-    
-    intakeServo1 = hardwareMap.get(CRServo.class, "intake servo 1");
-    intakeServo2 = hardwareMap.get(CRServo.class, "intake servo 2");
-    propeller = hardwareMap.get(CRServo.class, "propeller");
-    
-    // configure motors and servos
-    backleft.setDirection(DcMotor.Direction.FORWARD);
-    backright.setDirection(DcMotor.Direction.REVERSE);
-    frontleft.setDirection(DcMotor.Direction.REVERSE);
-    frontright.setDirection(DcMotor.Direction.FORWARD);
-    intakeMotor.setDirection(DcMotor.Direction.FORWARD);
-    launch.setDirection(DcMotor.Direction.FORWARD);
-    
-    intakeServo1.setDirection(CRServo.Direction.FORWARD);
-    intakeServo2.setDirection(CRServo.Direction.FORWARD);
-    propeller.setDirection(CRServo.Direction.FORWARD);
-
+    init.initializeRobot(backleft, backright, frontleft, frontright, intakeMotor, launch, intakeServo1, intakeServo2, propeller);
     double speedx, speedy, rotation;
 
     waitForStart();

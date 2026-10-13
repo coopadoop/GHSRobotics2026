@@ -20,6 +20,7 @@ public class Auto extends LinearOpMode {
   
   @Override
   public void runOpMode() {
+    init init = new init();
     init.initializeRobot(backleft, backright, frontleft, frontright, intakeMotor, launch, intakeServo1, intakeServo2, propeller);
     
     waitForStart();

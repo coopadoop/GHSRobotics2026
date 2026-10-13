@@ -16,7 +16,7 @@ import com.qualcomm.robotcore.hardware.CRServo;
 @TeleOp(name = "teleop")
 public class Teleop extends LinearOpMode {
   private DcMotor backleft, backright, frontleft, frontright, intakeMotor, launch; // declare motors
-  private CRServo intakeServo1, intakeServo2, flywheel; // declare servos
+  private CRServo intakeServo1, intakeServo2, propeller; // declare servos
 
   @Override
   public void runOpMode() {
@@ -30,7 +30,7 @@ public class Teleop extends LinearOpMode {
     
     intakeServo1 = hardwareMap.get(CRServo.class, "intake servo 1");
     intakeServo2 = hardwareMap.get(CRServo.class, "intake servo 2");
-    flywheel = hardwareMap.get(CRServo.class, "flywheel");
+    propeller = hardwareMap.get(CRServo.class, "propeller");
     
     // configure motors and servos
     backleft.setDirection(DcMotor.Direction.FORWARD);
@@ -42,7 +42,7 @@ public class Teleop extends LinearOpMode {
     
     intakeServo1.setDirection(CRServo.Direction.FORWARD);
     intakeServo2.setDirection(CRServo.Direction.FORWARD);
-    flywheel.setDirection(CRServo.Direction.FORWARD);
+    propeller.setDirection(CRServo.Direction.FORWARD);
 
     double speedx, speedy, rotation;
 

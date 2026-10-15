@@ -10,4 +10,11 @@ public class math {
     }
     return power;
   }
+  public double deadzone(double input) {
+    if (Math.abs(input < 0.15)) {
+      return 0.0;
+    } else {
+      return input;
+    }
+  }
 }

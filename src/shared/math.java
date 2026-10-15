@@ -1,5 +1,11 @@
-package org.firstinspires.ftc.teamcode;
+/*
+*    GHSRobotics2026-2027  Copyright (C) 2026  GHSRobotics Coding Team 2026-2027
+*    This program comes with ABSOLUTELY NO WARRANTY.
+*    This is free software, and you are welcome to redistribute it
+*    under certain conditions.
+*/
 
+package org.firstinspires.ftc.teamcode;
 
 public class math {
   public double max(double power) {

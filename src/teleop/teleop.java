@@ -15,13 +15,11 @@ import com.qualcomm.robotcore.hardware.CRServo;
 
 @TeleOp(name = "teleop")
 public class Teleop extends LinearOpMode {
-  private DcMotor backleft, backright, frontleft, frontright, intakeMotor, launch; // declare motors
-  private CRServo intakeServo1, intakeServo2, propeller; // declare servos
-
   @Override
   public void runOpMode() {
-    init init = new init();
-    init.initializeRobot(backleft, backright, frontleft, frontright, intakeMotor, launch, intakeServo1, intakeServo2, propeller);
+    init robot = new init();
+    math math = new math();
+    robot.initializeRobot(hardwareMap);
     double speedx, speedy, rotation;
 
     waitForStart();
@@ -31,10 +29,13 @@ public class Teleop extends LinearOpMode {
         speedy = -gamepad1.left_stick_y;
         rotation = gamepad1.right_stick_x;
 
-        backleft.setPower(speedy + speedx - rotation);
-        backright.setPower(speedy - speedx + rotation);
-        frontleft.setPower(speedy - speedx - rotation);
-        frontright.setPower(speedy + speedx + rotation);
+        robot.backleft.setPower(math.max(rotation + speedx - speedy));
+        robot.backright.setPower(math.max(rotation - speedx + speedy));
+        robot.frontleft.setPower(math.max(rotation - speedx - speedy));
+        robot.frontright.setPower(math.max(rotation + speedx + speedy));
+        
+        robot.intakeServo1.setPower(1);
+        robot.intakeServo2.setPower(1);
 
         telemetry.update();
       }

@@ -25,9 +25,9 @@ public class Teleop extends LinearOpMode {
     waitForStart();
     if(opModeIsActive()) {
       while(opModeIsActive()) {
-        speedx = gamepad1.left_stick_x;
-        speedy = -gamepad1.left_stick_y;
-        rotation = gamepad1.right_stick_x;
+        speedx = math.deadzone(gamepad1.left_stick_x);
+        speedy = math.deadzone(-gamepad1.left_stick_y);
+        rotation = math.deadzone(gamepad1.right_stick_x);
 
         robot.backleft.setPower(math.max(rotation + speedx - speedy));
         robot.backright.setPower(math.max(rotation - speedx + speedy));

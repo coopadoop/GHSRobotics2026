@@ -9,10 +9,10 @@ package org.firstinspires.ftc.teamcode;
 
 public class math {
   public double max(double power) {
-    if (Math.abs(power) > 1.0) {
-      if (power > 0) return 1;
+    if (Math.abs(power) > 0.9) {
+      if (power > 0) return 0.9;
       else
-      if (power < 0) return -1;
+      if (power < 0) return -0.9;
     }
     return power;
   }

@@ -13,15 +13,31 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.CRServo;
 
+public class position {
+  double x;
+  double y;
+}
+public class size {
+  double width;
+  double height;
+}
+public class transform {
+  position position = new position();
+  size size = new size();
+  double rotation = 0.0;
+}
+
 @Autonomous(name = "autonomous")
 public class Auto extends LinearOpMode {
   private DcMotor backleft, backright, frontleft, frontright, intakeMotor, launch; // declare motors
   private CRServo intakeServo1, intakeServo2, propeller; // declare servos
-  
+
+  transform transform = new transform();
+
   @Override
   public void runOpMode() {
-    init init = new init();
-    init.initializeRobot(backleft, backright, frontleft, frontright, intakeMotor, launch, intakeServo1, intakeServo2, propeller);
+    init robot = new init();
+    robot.initializeRobot(backleft, backright, frontleft, frontright, intakeMotor, launch, intakeServo1, intakeServo2, propeller);
     
     waitForStart();
     if (opModeIsActive()) {
@@ -35,7 +51,7 @@ public class Auto extends LinearOpMode {
         
         intakeServo1.setPower(1);
         intakeServo2.setPower(1);
-        flywheel.setPower(1);
+        propeller.setPower(1);
 
         telemetry.update();
       }

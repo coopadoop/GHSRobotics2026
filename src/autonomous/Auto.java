@@ -26,6 +26,11 @@ public class transform {
   size size = new size();
   double rotation = 0.0;
 }
+enum State {
+  PATROL,
+  PARK,
+  LAUNCH
+}
 
 @Autonomous(name = "autonomous")
 public class Auto extends LinearOpMode {

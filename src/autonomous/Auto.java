@@ -27,9 +27,19 @@ public class transform {
   double rotation = 0.0;
 }
 enum State {
+  STARTUP,
   PATROL,
-  PARK,
-  LAUNCH
+  LAUNCH,
+  PARK
+}
+
+public class void patrolx(double movx, boolean x) {
+  if () {
+    
+  }
+}
+public class void patroly(double, boolean) {
+  
 }
 
 @Autonomous(name = "autonomous")
@@ -37,7 +47,12 @@ public class Auto extends LinearOpMode {
   private DcMotor backleft, backright, frontleft, frontright, intakeMotor, launch; // declare motors
   private CRServo intakeServo1, intakeServo2, propeller; // declare servos
 
-  transform transform = new transform();
+  transform transform = new transform(); // stores robots position on the field
+  transform.position.x = 0.0;
+  transform.position.y = 0.0;
+  transform.rotation = 0.0;
+  
+  State state = PATROL; // stores what the robot is doing
 
   @Override
   public void runOpMode() {
@@ -47,16 +62,23 @@ public class Auto extends LinearOpMode {
     waitForStart();
     if (opModeIsActive()) {
       while (opModeIsActive()) {
-        backleft.setPower(1);
-        backright.setPower(1);
-        frontleft.setPower(1);
-        frontright.setPower(1); 
-        intakeMotor.setPower(1);
-        launch.setPower(1);
-        
-        intakeServo1.setPower(1);
-        intakeServo2.setPower(1);
-        propeller.setPower(1);
+        switch (state) {
+          case STARTUP:
+            break;
+          case PATROL:
+            double movx = 10.0;
+            double movy = 10.0;
+
+            public class
+
+            break;
+          case LAUNCH:
+            break;
+          case PARK:
+            break;
+          default:// this state is literally impossible but the robot will find a way to enter it so well just use patrol
+            break;
+        }
 
         telemetry.update();
       }

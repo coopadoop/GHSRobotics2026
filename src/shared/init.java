@@ -5,15 +5,19 @@
 *    under certain conditions.
 */
 
-package org.firstinspires.ftc.teamcode
+package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.CRServo;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 public class init {
-  public static  void initializeRobot(DcMotor backleft, DcMotor backright, DcMotor frontleft, DcMotor frontright, DcMotor intakeMotor, DcMotor launch, CRServo intakeServo1, CRServo intakeServo2, CRServo propeller) {
+  public DcMotor backleft, backright, frontleft, frontright, intakeMotor, launch; // declare motors
+  public CRServo intakeServo1, intakeServo2, propeller; // declare servos
+  
+  public void initializeRobot(HardwareMap hardwareMap) {
     backleft = hardwareMap.get(DcMotor.class, "back left");
     backright = hardwareMap.get(DcMotor.class, "back right");
     frontleft = hardwareMap.get(DcMotor.class, "front left");
@@ -27,8 +31,8 @@ public class init {
     
     // configure motors and servos
     backleft.setDirection(DcMotor.Direction.FORWARD);
-    backright.setDirection(DcMotor.Direction.REVERSE);
-    frontleft.setDirection(DcMotor.Direction.REVERSE);
+    backright.setDirection(DcMotor.Direction.FORWARD);
+    frontleft.setDirection(DcMotor.Direction.FORWARD);
     frontright.setDirection(DcMotor.Direction.FORWARD);
     intakeMotor.setDirection(DcMotor.Direction.FORWARD);
     launch.setDirection(DcMotor.Direction.FORWARD);

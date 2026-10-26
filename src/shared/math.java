@@ -8,8 +8,15 @@
 package org.firstinspires.ftc.teamcode;
 
 public class math {
+  public double abs(double x) {
+    if (x < 0.0) {
+      return -x;
+    } else {
+      return x;
+    }
+  }
   public double max(double power) {
-    if (Math.abs(power) > 0.9) {
+    if (abs(power) > 0.9) {
       if (power > 0) return 0.9;
       else
       if (power < 0) return -0.9;
@@ -17,7 +24,7 @@ public class math {
     return power;
   }
   public double deadzone(double input) {
-    if (Math.abs(input < 0.15)) {
+    if (abs(input) < 0.15) {
       return 0.0;
     } else {
       return input;

@@ -20,3 +20,9 @@
 - Add control of other motors and servos to teleop
 - Set up PID for the launch sequence (This is needed for a more consistent speed for the actual pad)
 - GOBILDA Servo Programmer to turn it into a CRServo
+
+## Features to Add (majority of this is the autonomous)
+- Launch (B to start propeller, A to launch) (also study PID for the launch)
+- Intake Servos
+- Make camera spot the balls via color (red, yellow, blue, etc)
+- 

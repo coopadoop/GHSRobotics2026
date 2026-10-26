@@ -22,8 +22,9 @@ public class Teleop extends LinearOpMode {
     init robot = new init();
     math math = new math();
     robot.initializeRobot(hardwareMap);
-    double speedx, speedy, rotation;
-
+    double speedx, speedy, rotation, count;
+    boolean load;
+    // count is for how long to move propeller
     waitForStart();
     if(opModeIsActive()) {
       while(opModeIsActive()) {
@@ -38,6 +39,10 @@ public class Teleop extends LinearOpMode {
         
         robot.intakeServo1.setPower(1);
         robot.intakeServo2.setPower(1);
+
+        robot.launch.setPower(1);
+        
+        robot.propeller.setPower();
 
         telemetry.update();
       }

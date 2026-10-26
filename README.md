@@ -19,3 +19,4 @@
 - Check servo and motor directions
 - Add control of other motors and servos to teleop
 - Set up PID for the launch sequence (This is needed for a more consistent speed for the actual pad)
+- GOBILDA Servo Programmer to turn it into a CRServo

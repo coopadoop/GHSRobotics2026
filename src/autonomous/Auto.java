@@ -91,10 +91,10 @@ public class Auto extends LinearOpMode {
   state = PATROL; // stores what the robot is doing
   patrolState patrolState = FORWARD; // stores what direction to move robot in
 
-  move() {
+  move(double mov) {
     
   }
-  rotate() {
+  rotate(double deg) {
     
   }
 
